@@ -12,7 +12,7 @@ describe('A sample react component', function() {
     expect(shallow(<SampleComponent />).contains(<div className="sample">Sample</div>)).toBe(true);
   });
 
-  it('should be selectable by class "foo"', function() {
+  it('should be selectable by class "sample"', function() {
     expect(shallow(<SampleComponent />).is('.sample')).toBe(true);
   });
 
