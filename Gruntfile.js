@@ -53,5 +53,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-pg');
 
   grunt.registerTask('default', ['eslint']);
-  grunt.registerTask('test', ['run']); // grunt.registerTask('test', ['run', 'mochatTest']); to run serverside mocha tests also
+  grunt.registerTask('test', ['run', 'mochaTest']); // grunt.registerTask('test', ['run', 'mochaTest']); to run serverside mocha tests also
 };
