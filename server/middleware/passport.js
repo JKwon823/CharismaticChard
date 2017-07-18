@@ -1,4 +1,5 @@
 'use strict';
+require('dotenv').config();
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
@@ -108,17 +109,17 @@ passport.use('local-login', new LocalStrategy({
   }));
 
 passport.use('google', new GoogleStrategy({
-  clientID: config.Google.clientID,
-  clientSecret: config.Google.clientSecret,
-  callbackURL: config.Google.callbackURL
+  clientID: config.Google.clientID || process.env.Google_clientID,
+  clientSecret: config.Google.clientSecret || process.env.Google_clientSecret,
+  callbackURL: config.Google.callbackURL || process.env.Google_callbackURL
 },
   (accessToken, refreshToken, profile, done) => getOrCreateOAuthProfile('google', profile, done))
 );
 
 passport.use('facebook', new FacebookStrategy({
-  clientID: config.Facebook.clientID,
-  clientSecret: config.Facebook.clientSecret,
-  callbackURL: config.Facebook.callbackURL,
+  clientID: config.Facebook.clientID || process.env.FB_clientID,
+  clientSecret: config.Facebook.clientSecret || process.env.FB_clientSecret,
+  callbackURL: config.Facebook.callbackURL || process.env.FB_callbackURL,
   profileFields: ['id', 'emails', 'name']
 },
   (accessToken, refreshToken, profile, done) => getOrCreateOAuthProfile('facebook', profile, done))
