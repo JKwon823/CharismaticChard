@@ -27,7 +27,10 @@ module.exports = function(grunt) {
         args: [
           'client/test/.setup.js',
           'client/test/*.*.js',
-          '--colors'
+          'server/test/*.*.js',
+          '--colors',
+          '--runInBand',
+          '--forceExit'
         ]
       }
     },
@@ -53,5 +56,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-pg');
 
   grunt.registerTask('default', ['eslint']);
-  grunt.registerTask('test', ['run', 'mochaTest']); // grunt.registerTask('test', ['run', 'mochaTest']); to run serverside mocha tests also
+  grunt.registerTask('test', ['run']);
 };
