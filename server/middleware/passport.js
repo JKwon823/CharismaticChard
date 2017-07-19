@@ -127,9 +127,9 @@ passport.use('facebook', new FacebookStrategy({
 
 // REQUIRES PERMISSIONS FROM TWITTER TO OBTAIN USER EMAIL ADDRESSES
 passport.use('twitter', new TwitterStrategy({
-  consumerKey: config.Twitter.consumerKey,
-  consumerSecret: config.Twitter.consumerSecret,
-  callbackURL: config.Twitter.callbackURL,
+  consumerKey: config.Twitter.consumerKey || process.env.Twitter_consumerKey,
+  consumerSecret: config.Twitter.consumerSecret || process.env.Twitter_consumerSecret,
+  callbackURL: config.Twitter.callbackURL || process.env.Twitter_callbackURL,
   userProfileURL: 'https://api.twitter.com/1.1/account/verify_credentials.json?include_email=true'
 },
   (accessToken, refreshToken, profile, done) => getOrCreateOAuthProfile('twitter', profile, done))
