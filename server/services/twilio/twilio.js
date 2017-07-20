@@ -1,7 +1,7 @@
-var config = require('./config.js') || {
+var config = {
   accountSid: process.env.Twilio_accountSid,
   authToken: process.env.Twilio_authToken
-};
+} || require('./config.js');
 var twilio = require('twilio');
 var client = new twilio(config.accountSid, config.authToken);
 
