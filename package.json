@@ -1,7 +1,7 @@
 {
   "name": "course.thesis",
   "version": "1.0.0",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
     "heroku-postbuild": "webpack -d",
     "start": "nodemon server",
