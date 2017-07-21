@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "heroku-postbuild": "NODE_ENV=production grunt pgcreatedb:default && webpack -d",
+    "heroku-postbuild": "heroku run knex migrate:latest && heroku run knex seed:run && webpack -d",
     "heroku-prebuild": "npm install -g grunt-cli",
     "start": "nodemon server",
     "startHeroku": "node server",
@@ -68,6 +68,9 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "enzyme": "^2.9.1",
+    "grunt": "^1.0.1",
+    "grunt-eslint": "^20.0.0",
+    "grunt-mocha-test": "^0.13.2",
     "grunt-run": "^0.7.0",
     "jest": "^20.0.4",
     "jsdom": "^11.1.0",
