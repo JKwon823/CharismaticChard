@@ -1,4 +1,3 @@
-require('dotenv').config();
 if (process.env.Twilio_accountSid && process.env.Twilio_authToken) {
   var config = {
     accountSid: process.env.Twilio_accountSid,
