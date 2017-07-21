@@ -1,7 +1,14 @@
 require('dotenv').config();
-var config = require('./config.js');
+if (process.env.Twilio_accountSid && process.env.Twilio_authToken) {
+  var config = {
+    accountSid: process.env.Twilio_accountSid,
+    authToken: process.env.Twilio_authToken
+  };
+} else {
+  var config = require('./config.js');
+}
 var twilio = require('twilio');
-var client = new twilio(config.accountSid || process.env.Twilio_accountSid, config.authToken || process.env.Twilio_authToken);
+var client = new twilio(config.accountSid, config.authToken);
 
 
 
