@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "heroku-postbuild": "heroku run knex migrate:latest && heroku run knex seed:run && webpack -d",
-    "heroku-prebuild": "npm install -g grunt-cli",
+    "heroku-postbuild": "webpack -d",
     "start": "nodemon server",
     "startHeroku": "node server",
     "test": "NODE_ENV=test grunt test",
