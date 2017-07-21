@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "heroku-postbuild": "knex migrate:latest --env NODE_ENV && knex seed:run --env NODE_ENV && webpack -d",
+    "heroku-postbuild": "webpack -d",
     "start": "nodemon server",
-    "startHeroku": "node server",
+    "startHeroku": "NODE_ENV=production grunt pgcreatedb:default && node server",
     "test": "NODE_ENV=test grunt test",
     "build": "webpack --watch"
   },
