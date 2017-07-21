@@ -4,6 +4,7 @@
   "main": "index.js",
   "scripts": {
     "heroku-postbuild": "NODE_ENV=production grunt pgcreatedb:default && webpack -d",
+    "heroku-prebuild": "npm install -g grunt-cli",
     "start": "nodemon server",
     "startHeroku": "node server",
     "test": "NODE_ENV=test grunt test",
