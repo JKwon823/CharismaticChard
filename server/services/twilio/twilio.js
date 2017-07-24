@@ -4,7 +4,7 @@ if (process.env.Twilio_accountSid && process.env.Twilio_authToken) {
     authToken: process.env.Twilio_authToken
   };
 } else {
-  var config = require('./config.js');
+  var config = require('./config.js' || './config_example.js');
 }
 var twilio = require('twilio');
 var client = new twilio(config.accountSid, config.authToken);
