@@ -14,6 +14,7 @@ console.log(client);
 
 
 module.exports.sendSms = function(to, message) {
+  console.log(client);
   return client.messages
     .create({
       body: message,
