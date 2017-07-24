@@ -7,7 +7,7 @@ if (process.env.Twilio_accountSid && process.env.Twilio_authToken) {
 } else if (path.isAbsolute('./config')) {
   var config = require('./config.js');
 } else {
-  var config = require('./config_example.js');
+  var config = require('./config.js');
 }
 var twilio = require('twilio');
 var client = new twilio(config.accountSid, config.authToken);
