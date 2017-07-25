@@ -7,7 +7,7 @@ if (process.env.Twilio_accountSid && process.env.Twilio_authToken) {
   var config = require('./config.js');
 }
 var twilio = require('twilio');
-if (process.env.TRAVIS) {
+if (process.env.isTravis) {
   var client = {
     messages: {
       create: () => {
