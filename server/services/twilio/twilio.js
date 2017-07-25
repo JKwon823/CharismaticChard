@@ -4,7 +4,7 @@ if (process.env.Twilio_accountSid && process.env.Twilio_authToken) {
     accountSid: process.env.Twilio_accountSid,
     authToken: process.env.Twilio_authToken
   };
-} else if (path.isAbsolute('/server/services/twilio/config.js')) {
+} else if (!process.env.TRAVIS) {
   var config = require('./config.js');
 }
 var twilio = require('twilio');
