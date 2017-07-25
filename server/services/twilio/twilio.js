@@ -1,10 +1,9 @@
-const path = require('path');
 if (process.env.Twilio_accountSid && process.env.Twilio_authToken) {
   var config = {
     accountSid: process.env.Twilio_accountSid,
     authToken: process.env.Twilio_authToken
   };
-} else if (!process.env.TRAVIS) {
+} else if (!process.env.isTravis) {
   var config = require('./config.js');
 }
 var twilio = require('twilio');
@@ -22,7 +21,6 @@ if (process.env.TRAVIS) {
 
 
 module.exports.sendSms = function(to, message) {
-
   return client.messages
     .create({
       body: message,
