@@ -1,10 +1,17 @@
+const checkUser = (username) => {
+
+  return {
+    type: 'CHECK_USER',
+    payload: username
+  };
+};
+
 const setDebtors = (debtor) => {
   return {
     type: 'SET_DEBTORS',
     payload: debtor,
   };
 };
-
 
 const setFriendsInfo = (friendsInfo) => {
   return {
@@ -14,6 +21,7 @@ const setFriendsInfo = (friendsInfo) => {
 };
 
 export {
+  checkUser,
   setDebtors,
   setFriendsInfo
 };
