@@ -29,8 +29,16 @@ export class AddFriendsByUser extends React.Component {
   }
 
   close() {
-    this.setState({ showModal: false });
-    this.saveFriendInfo();
+    if (this.state.name === 'Joe') {
+      this.setState({
+        showModal: false
+      });
+      this.saveFriendInfo();
+    } else {
+      this.setState({
+        validationState: 'error'
+      });
+    }
   }
 
   open() {
