@@ -82,9 +82,9 @@ class DragAndDrop extends React.Component {
     $('.completedList').each((index, list) => {
       var debtor = {};
       var nameAndPhone = list.id.split(' ');
-      debtor.name = nameAndPhone[0];
-      debtor.phone = nameAndPhone[1];
-      debtor.email = nameAndPhone[2] === 'undefined' ? null : nameAndPhone[2];
+      debtor.name = this.props.friendsInfo[index].friendName;
+      debtor.phone = this.props.friendsInfo[index].friendNumber;
+      debtor.email = this.props.friendsInfo[index].friendEmail || null;
       debtor.items = [];
       if (list.children.length > 0) {
         $.each(list.children, (name, obj) => {
@@ -196,7 +196,7 @@ class DragAndDrop extends React.Component {
                     <div className="containerTitle list-group-item boldItemsHeaders">
                       {person.friendName}
                     </div>
-                    <div className="list-group-item sortableList completedList" id={person.friendName + ' ' + person.friendNumber + ' ' + person.friendEmail}>
+                    <div className="list-group-item sortableList completedList" id={person.friendName + ' ' + person.friendNumber}>
                     </div>
                   </div>
                 ))
