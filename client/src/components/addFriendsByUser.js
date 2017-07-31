@@ -35,6 +35,7 @@ export class AddFriendsByUser extends React.Component {
     e.preventDefault();
     this.saveFriendInfo();
     this.setState({
+      username: '',
       validationState: null
     });
     this.toggle();
