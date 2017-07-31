@@ -4,8 +4,8 @@ import Sortable from 'sortablejs';
 import $ from 'jquery';
 import { Link } from 'react-router-dom';
 import AddFriends from './addFriends.js';
-import { 
-  setDebtors, 
+import {
+  setDebtors,
   setSplitter,
   setSplitTotal,
   setTotalTax,
@@ -60,14 +60,14 @@ class DragAndDrop extends React.Component {
     let debtorTax = this.props.tax * percent;
     debtorTax = Number(debtorTax.toFixed(2));
     return debtorTax;
-  };
-  
+  }
+
   splitTip(debtorTotal) {
     let percent = debtorTotal / (this.props.total - this.props.tax);
     let debtorTip = this.props.tip * percent;
     debtorTip = Number(debtorTip.toFixed(2));
     return debtorTip;
-  };
+  }
 
   calculateTotal(items) {
     let total = 0;
@@ -75,7 +75,7 @@ class DragAndDrop extends React.Component {
       total += Number(item.price);
     });
     return total;
-  };
+  }
 
   grabListData() {
     var debtors = [];
@@ -84,6 +84,7 @@ class DragAndDrop extends React.Component {
       var nameAndPhone = list.id.split(' ');
       debtor.name = nameAndPhone[0];
       debtor.phone = nameAndPhone[1];
+      debtor.email = nameAndPhone[2] === 'undefined' ? null : nameAndPhone[2];
       debtor.items = [];
       if (list.children.length > 0) {
         $.each(list.children, (name, obj) => {
@@ -195,7 +196,7 @@ class DragAndDrop extends React.Component {
                     <div className="containerTitle list-group-item boldItemsHeaders">
                       {person.friendName}
                     </div>
-                    <div className="list-group-item sortableList completedList" id={person.friendName + ' ' + person.friendNumber}>
+                    <div className="list-group-item sortableList completedList" id={person.friendName + ' ' + person.friendNumber + ' ' + person.friendEmail}>
                     </div>
                   </div>
                 ))

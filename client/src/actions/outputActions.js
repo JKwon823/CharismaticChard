@@ -1,8 +1,14 @@
-const checkUser = (username) => {
+import axios from 'axios';
 
-  return {
-    type: 'CHECK_USER',
-    payload: username
+const checkUserAction = (username) => {
+  return (dispatch) => {
+    axios.get(`/api/check-user/${username}`)
+      .then(res => {
+        dispatch({type: 'CHECK_USER', payload: res.data});
+      })
+      .catch(err => {
+        console.log(err);
+      });
   };
 };
 
@@ -20,8 +26,9 @@ const setFriendsInfo = (friendsInfo) => {
   };
 };
 
+
 export {
-  checkUser,
+  checkUserAction,
   setDebtors,
   setFriendsInfo
 };

@@ -2,7 +2,7 @@ export default function reducer(state =
   {
     debtors: null,
     friendsInfo: [],
-    user: false
+    checkUser: {},
   }, action) {
   switch (action.type) {
   case 'SET_DEBTORS': {
@@ -12,7 +12,7 @@ export default function reducer(state =
     return {...state, friendsInfo: [...state.friendsInfo, action.payload]};
   }
   case 'CHECK_USER': {
-    return {...state, user: action.payload};
+    return {...state, checkUser: action.payload, checkedUser: true};
   }
   default: {
     return state;
