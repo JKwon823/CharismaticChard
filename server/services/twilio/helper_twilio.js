@@ -8,8 +8,7 @@ module.exports.generateMessage = function (data) {
                    items: ${getItems(debtor.items)}
                    tax: ${debtor.tax}
                    tip: ${debtor.tip}
-  https://venmo.com/${data.splitter.phone}?txn=pay&amount=${debtor.debtTotal}&note=${data.splitName}
-                   `;
+    venmolink: https://venmo.com/${data.splitter.phone}?txn=pay&amount=${debtor.debtTotal}&note=${data.splitName}`;
     messages.push(message);
   });
   return messages;
