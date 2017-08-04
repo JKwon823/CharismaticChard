@@ -40,7 +40,7 @@ export class AddFriends extends React.Component {
     this.setState({
       isValidNumber: false,
       name: '',
-      number: '',
+      number: null,
       validationStateName: null,
       validationStateNumber: null
     });
@@ -49,7 +49,7 @@ export class AddFriends extends React.Component {
 
   handleFailAdd(e) {
     e.preventDefault();
-    if (!this.state.name.length) {
+    if (!this.state.name.length || !this.state.name.match(/^[a-z0-9]+$/i)) {
       this.setState({
         validationStateName: 'error'
       });
@@ -110,7 +110,7 @@ export class AddFriends extends React.Component {
             <Modal.Title>Add a friend</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <Form horizontal onSubmit={this.state.name.length && this.state.isValidNumber ? this.handleAdd.bind(this) : this.handleFailAdd.bind(this)}>
+            <Form horizontal onSubmit={(this.state.name.length || this.state.name.match(/^[a-z0-9]+$/i)) && this.state.isValidNumber ? this.handleAdd.bind(this) : this.handleFailAdd.bind(this)}>
               <FormGroup controlId="formName" validationState={this.state.validationStateName}>
                 <Col componentClass={ControlLabel} sm={2}>
                   Name
@@ -120,7 +120,7 @@ export class AddFriends extends React.Component {
                 </Col>
               </FormGroup>
             </Form>
-            <Form horizontal onSubmit={this.state.name.length && this.state.isValidNumber ? this.handleAdd.bind(this) : this.handleFailAdd.bind(this)}>
+            <Form horizontal onSubmit={(this.state.name.length || this.state.name.match(/^[a-z0-9]+$/i)) && this.state.isValidNumber ? this.handleAdd.bind(this) : this.handleFailAdd.bind(this)}>
               <FormGroup controlId="formPhoneNumber" validationState={this.state.validationStateNumber}>
                 <Col componentClass={ControlLabel} sm={2}>
                   Number
@@ -132,7 +132,7 @@ export class AddFriends extends React.Component {
             </Form>
           </Modal.Body>
           <Modal.Footer>
-            <Button bsStyle="primary" onClick={this.state.isValidName && this.state.isValidNumber ? this.handleAdd.bind(this) : this.handleFailAdd.bind(this)}>ADD</Button>
+            <Button bsStyle="primary" onClick={(this.state.name.length || this.state.name.match(/^[a-z0-9]+$/i)) && this.state.isValidNumber ? this.handleAdd.bind(this) : this.handleFailAdd.bind(this)}>ADD</Button>
           </Modal.Footer>
         </Modal>
       </div>
