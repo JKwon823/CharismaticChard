@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "CharismaticChard",
+    "public": "_site/",
     "ignore": [
       "firebase.json",
       "**/.*",
@@ -8,7 +8,13 @@
       "README.md",
       "firebase-debug.log",
       "dump.rdb",
-      "yarn-error.log"
+      "yarn-error.log",
+      "config/development.json"
+      "config/production.json"
+      "config/staging.json"
+      "config/test.json"
+      "server/services/twilio/config.js"
+      "server/services/image_processor/test"
     ]
   }
 }
