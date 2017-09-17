@@ -1,1 +1,14 @@
-{}
+{
+  "hosting": {
+    "public": "CharismaticChard",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**",
+      "README.md",
+      "firebase-debug.log",
+      "dump.rdb",
+      "yarn-error.log"
+    ]
+  }
+}
