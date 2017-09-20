@@ -8,6 +8,7 @@ import {
   Redirect,
   Switch
 } from 'react-router-dom';
+import Login from './components/login.js';
 import Home from './components/home.js';
 import Input from './components/input.js';
 import Confirmation from './components/confirmation.js';

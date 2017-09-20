@@ -1,20 +1,11 @@
 {
   "hosting": {
-    "public": "_site/",
+    "public": "/",
     "ignore": [
       "firebase.json",
       "**/.*",
-      "**/node_modules/**",
-      "README.md",
-      "firebase-debug.log",
-      "dump.rdb",
-      "yarn-error.log",
-      "config/development.json"
-      "config/production.json"
-      "config/staging.json"
-      "config/test.json"
-      "server/services/twilio/config.js"
-      "server/services/image_processor/test"
-    ]
+      "**/node_modules/**"
+    ],
+    "trailingSlash": false
   }
 }
