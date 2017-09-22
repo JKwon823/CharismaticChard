@@ -47,7 +47,7 @@ class App extends React.Component {
       <Router history={browserHistory}>
         <div>
           <div className="nav-bar navbar navbar-default">
-              <MainSidebars />
+            <MainSidebars />
           </div>
           <Switch>
             <Route exact path="/" component={() => <Home />} />

@@ -49,17 +49,17 @@ class MainSidebars extends React.Component {
   render() {
     return (
       <div className='menuBtn col-xs-12'>
-          <div className="col-xs-2 align-middle">
-            <div onClick={this.toggleModal} className="nav-item">
-              <div className="bar1"></div>
-              <div className="bar2"></div>
-              <div className="bar3"></div>
-            </div>
+        <div className="col-xs-2 align-middle">
+          <div onClick={this.toggleModal} className="nav-item">
+            <div className="bar1"></div>
+            <div className="bar2"></div>
+            <div className="bar3"></div>
           </div>
+        </div>
         <div className="nav row logo-image col-xs-8 menuBtn">
-            <Link to="/" >
-              <img src="./assets/splitter-logo-white.png" className="homeLogo menuBtn" />
-            </Link>
+          <Link to="/" >
+            <img src="./assets/splitter-logo-white.png" className="homeLogo menuBtn" />
+          </Link>
         </div>
         <SidebarHelper side='left' isVisible={this.state.isVisible} onHide={this.toggleModal}>
           <div className="side-bar">
