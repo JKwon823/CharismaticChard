@@ -117,12 +117,14 @@ h2, h3, h4, h6 {
 }
 
 .logo-image {
-    margin-top: 20px;
+    margin-left: 10px;
     text-align: center;
 }
 
 
 .homeLogo {
+    /*margin-top: 4px;
+    margin-left: -27px;*/
     width: 200px;
 }
 
@@ -481,11 +483,6 @@ img.displayed {
     padding: 20px;
 }
 
-.homeLogo {
-    margin-top: 8px;
-    margin-left: -100px;
-}
-
 ::selection {
     background-color: #edff00;
     color: #111;
@@ -556,6 +553,7 @@ img.displayed {
 }
 
 .menuBtn {
+    margin-top: 10px;
     height: 70px;
 }
 
